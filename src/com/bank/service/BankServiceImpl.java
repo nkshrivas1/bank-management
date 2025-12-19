@@ -1,6 +1,7 @@
 package com.bank.service;
 
 import com.bank.constant.AccountType;
+import com.bank.exceptions.AccountNotFound;
 import com.bank.model.Account;
 import com.bank.model.CurrentAccount;
 import com.bank.model.SavingAccount;
@@ -63,6 +64,15 @@ public class BankServiceImpl implements BankService{
     public void depositMoney() {
         System.out.println("Enter account number");
         String accNo = sc.nextLine();
+        Account account = BankRepository.accounts.get(accNo);
+        if(account == null)
+            throw new AccountNotFound("Account not found");
+        System.out.print("Enter amount to deposit: ");
+        double amount  = sc.nextDouble();
+        sc.nextLine();
+        account.deposit(amount);
+        BankRepository.transactions.add(LocalDateTime.now()+" | credit | "+ amount);
+        System.out.println("amount deposited successfully");
 
 
     }
