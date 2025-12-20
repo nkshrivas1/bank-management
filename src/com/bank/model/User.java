@@ -10,6 +10,9 @@ public class User {
     private String email;
     IdGenerator id = new IdGenerator();
     //Constructor
+    //1. class name and constructor name should be same
+    //2. Does not have any return type
+    // Access modifiers -> public,private,protected,default
     public User(String name, String mobileNumber, String address, String email) {
         this.name = name;
         this.mobileNumber = mobileNumber;

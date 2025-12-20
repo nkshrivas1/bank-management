@@ -1,8 +1,9 @@
 package com.bank.model;
 
 import com.bank.constant.AccountType;
+import com.bank.service.BankService;
 
-public class SavingAccount extends Account{
+public class SavingAccount extends Account {
     private static final double MIN_BALANCE = 10000.0;
 
     @Override

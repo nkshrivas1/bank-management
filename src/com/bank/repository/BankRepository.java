@@ -11,7 +11,7 @@ public class BankRepository {
     // store accounts
     public static Map<String, Account> accounts = new HashMap<>();
     //store transactions
-    public static List<String> transactions = new ArrayList<>();
+    public static Map<String,ArrayList> transactions = new HashMap<>();
 
     // Prevent object creation
     private BankRepository(){
